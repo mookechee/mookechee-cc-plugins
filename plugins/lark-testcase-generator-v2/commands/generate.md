@@ -212,7 +212,9 @@ query:
 
 ### 步骤 9: 保存文件
 
-将 OPML 文件保存到：`~/Testcase/opml/{工作项名称}_测试用例.opml`
+将 OPML 文件保存到：`~/Testcase/opml/{工作项名称}_测试用例_{时间戳}.opml`
+
+时间戳格式：`YYYYMMDD_HHmmss`（如 `20250106_143052`）
 
 如果目录不存在，先创建目录。
 
@@ -248,7 +250,7 @@ query:
 
 ## 文件路径
 
-`~/Testcase/opml/{工作项名称}_测试用例.opml`
+`~/Testcase/opml/{工作项名称}_测试用例_{时间戳}.opml`
 ```
 
 ---

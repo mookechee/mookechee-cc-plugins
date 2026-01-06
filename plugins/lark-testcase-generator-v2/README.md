@@ -124,7 +124,9 @@ https://project.feishu.cn/uts5wn/story/detail/6596729761
 
 ## 输出文件
 
-默认输出路径：`~/Testcase/opml/{项目名}-testcase.opml`
+默认输出路径：`~/Testcase/opml/{项目名}-testcase_{时间戳}.opml`
+
+时间戳格式：`YYYYMMDD_HHmmss`（如 `20250106_143052`）
 
 OPML 文件可导入以下工具：
 - XMind

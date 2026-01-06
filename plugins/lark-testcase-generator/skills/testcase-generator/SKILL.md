@@ -138,7 +138,9 @@ mcp__lark-mcp-remote__docs_v1_content_get
 
 ### 第六步：输出 OPML 文件
 
-生成路径：`~/Testcase/opml/{project-name}-testcase.opml`
+生成路径：`~/Testcase/opml/{project-name}-testcase_{时间戳}.opml`
+
+时间戳格式：`YYYYMMDD_HHmmss`（如 `20250106_143052`）
 
 ## 测试用例格式规范
 
@@ -238,4 +240,4 @@ https://project.feishu.cn/uts5wn/story/detail/6596729761
 
 ### 输出
 
-生成 OPML 文件 `~/Testcase/opml/wuji-sdk-server-testcase.opml`
+生成 OPML 文件 `~/Testcase/opml/wuji-sdk-server-testcase_{时间戳}.opml`
