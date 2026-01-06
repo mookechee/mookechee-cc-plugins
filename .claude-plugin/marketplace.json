@@ -1,7 +1,7 @@
 {
   "name": "mookechee",
   "owner": {
-    "name": "qimohan"
+    "name": "mookechee"
   },
   "metadata": {
     "description": "飞书项目测试用例生成工具集",
@@ -10,13 +10,13 @@
   "plugins": [
     {
       "name": "lark-testcase-generator",
-      "source": ".",
+      "source": "./plugins/lark-testcase-generator",
       "description": "从飞书项目单子自动生成 OPML 格式的 XMind 测试用例",
       "version": "1.0.0",
       "author": {
-        "name": "qimohan"
+        "name": "mookechee"
       },
-      "repository": "https://github.com/qimohan/lark-testcase-generator",
+      "repository": "https://github.com/mookechee/mookechee",
       "license": "MIT",
       "keywords": ["lark", "feishu", "testcase", "xmind", "opml"],
       "category": "productivity"
