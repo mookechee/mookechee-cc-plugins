@@ -1,11 +1,11 @@
 ---
 name: testflow-generator
-description: 基于 TestFlow 四阶段工作流的智能测试用例生成器。当用户需要为 Story/需求/缺陷生成测试用例、创建 OPML 格式的 XMind 思维导图测试用例、根据技术方案设计测试场景、或者需要生成测试覆盖矩阵时使用。支持功能测试、边界测试、异常测试、兼容性测试、性能测试、安全测试等多种测试类型。
+description: 基于 TestFlow 四阶段工作流的智能测试用例生成器。当用户需要为 Story/需求/缺陷生成测试用例、创建 Markdown 格式的 markmap 思维导图测试用例、根据技术方案设计测试场景、或者需要生成测试覆盖矩阵时使用。支持功能测试、边界测试、异常测试、兼容性测试、性能测试、安全测试等多种测试类型。
 ---
 
 # TestFlow 智能测试用例生成器
 
-基于 TestFlow 四阶段工作流的智能测试用例生成 Skill，从需求文档自动生成 OPML 格式的 XMind 测试用例。
+基于 TestFlow 四阶段工作流的智能测试用例生成 Skill，从需求文档自动生成 **混合结构 Markdown** 格式的测试用例（可用 markmap 渲染）。
 
 ## MCP 服务器依赖
 
@@ -73,7 +73,7 @@ description: 基于 TestFlow 四阶段工作流的智能测试用例生成器。
     ↓ → 测试用例
 [阶段4] 智能优化 (85-100%)
     ↓
-OPML 文件（可导入 XMind）
+Markdown 文件（可用 markmap 渲染）
 ```
 
 ## 触发关键词
@@ -81,7 +81,8 @@ OPML 文件（可导入 XMind）
 以下关键词会触发此 Skill：
 
 - "生成测试用例"
-- "OPML 测试用例"
+- "Markdown 测试用例"
+- "markmap 测试用例"
 - "XMind 测试用例"
 - "飞书项目单子测试"
 - "为这个需求生成用例"
@@ -225,9 +226,9 @@ WebSearch
 | 兼容性测试 | 多平台、多配置 | P1-P2 |
 | 稳定性测试 | 重复操作、极端场景 | P2 |
 
-### 第八步：输出 OPML 文件
+### 第八步：输出 Markdown 文件
 
-生成路径：`~/Testcase/opml/{工作项名称}_测试用例_{时间戳}.opml`
+生成路径：`~/Testcase/markmap/{工作项名称}_测试用例_markmap_{时间戳}.md`
 
 时间戳格式：`YYYYMMDD_HHmmss`（如 `20250106_143052`）
 
@@ -235,41 +236,30 @@ WebSearch
 
 ### 结构要求
 
-每条测试用例采用 **链式结构**：
+每条测试用例采用 **7 层混合结构**（标题 + 无序列表）：
 
 ```
-用例名称
-  └── 前置条件
-        └── 执行步骤
-              └── 预期结果
-                    └── 优先级
+# 文档标题
+  └── ## 模块名
+        └── ### 用例名称
+              └── - 前置条件
+                    └──   - 执行步骤
+                          └──     - 预期结果
+                                └──       - 优先级
 ```
 
-### OPML 格式示例
+### Markdown 格式示例
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<opml version="2.0">
-  <head>
-    <title>测试用例标题</title>
-    <dateCreated>2025-12-24</dateCreated>
-  </head>
-  <body>
-    <outline text="测试用例集">
-      <outline text="功能模块">
-        <outline text="测试用例名称">
-          <outline text="前置条件描述">
-            <outline text="执行步骤描述">
-              <outline text="预期结果描述">
-                <outline text="P0"/>
-              </outline>
-            </outline>
-          </outline>
-        </outline>
-      </outline>
-    </outline>
-  </body>
-</opml>
+```markdown
+# 测试用例集
+
+## 1. 功能模块
+
+### 测试用例名称
+- 前置条件描述
+  - 执行步骤描述
+    - 预期结果描述
+      - P0
 ```
 
 ### 优先级定义
@@ -318,4 +308,4 @@ https://project.feishu.cn/uts5wn/story/detail/6596729761
 
 ### 输出
 
-生成 OPML 文件 `~/Testcase/opml/{需求名称}_测试用例_{时间戳}.opml`
+生成 Markdown 文件 `~/Testcase/markmap/{需求名称}_测试用例_markmap_{时间戳}.md`

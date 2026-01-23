@@ -161,6 +161,29 @@ validate_hooks_json() {
     log_success "$plugin_name: hooks.json 验证完成"
 }
 
+# 检查文档质量
+validate_documentation() {
+    local plugin_dir="$1"
+    local plugin_name=$(basename "$plugin_dir")
+    local has_error=0
+
+    # 检查乱码字符 (UTF-8 replacement character U+FFFD)
+    local garbled_files
+    garbled_files=$(grep -rln $'\xEF\xBF\xBD' "$plugin_dir" --include="*.md" 2>/dev/null || true)
+
+    if [[ -n "$garbled_files" ]]; then
+        for file in $garbled_files; do
+            log_error "$plugin_name: 发现乱码字符: $file"
+            grep -n $'\xEF\xBF\xBD' "$file" | head -5
+        done
+        has_error=1
+    fi
+
+    if [[ $has_error -eq 0 ]]; then
+        log_success "$plugin_name: 文档质量检查通过"
+    fi
+}
+
 # 验证 commands 目录
 validate_commands() {
     local plugin_dir="$1"
@@ -224,6 +247,7 @@ main() {
         validate_plugin_json "$plugin_dir"
         validate_commands "$plugin_dir"
         validate_skills "$plugin_dir"
+        validate_documentation "$plugin_dir"
         echo ""
     done
 
