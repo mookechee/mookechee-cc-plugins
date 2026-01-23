@@ -228,7 +228,7 @@ WebSearch
 
 ### 第八步：输出 Markdown 文件
 
-生成路径：`~/Testcase/opml/{工作项名称}_测试用例_markmap_{时间戳}.md`
+生成路径：`~/Testcase/markmap/{工作项名称}_测试用例_markmap_{时间戳}.md`
 
 时间戳格式：`YYYYMMDD_HHmmss`（如 `20250106_143052`）
 
@@ -308,4 +308,4 @@ https://project.feishu.cn/uts5wn/story/detail/6596729761
 
 ### 输出
 
-生成 Markdown 文件 `~/Testcase/opml/{需求名称}_测试用例_markmap_{时间戳}.md`
+生成 Markdown 文件 `~/Testcase/markmap/{需求名称}_测试用例_markmap_{时间戳}.md`

@@ -110,7 +110,7 @@
 ### 输出路径
 
 ```
-~/Testcase/opml/{工作项名称}_测试用例_markmap_{时间戳}.md
+~/Testcase/markmap/{工作项名称}_测试用例_markmap_{时间戳}.md
 ```
 
 ### 输出总结
