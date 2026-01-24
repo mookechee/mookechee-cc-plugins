@@ -9,19 +9,6 @@
   },
   "plugins": [
     {
-      "name": "lark-testcase-generator",
-      "source": "./plugins/lark-testcase-generator",
-      "description": "从飞书项目单子自动生成 OPML 格式的 XMind 测试用例",
-      "version": "0.2.1",
-      "author": {
-        "name": "mookechee"
-      },
-      "repository": "https://github.com/mookechee/mookechee-cc-plugins",
-      "license": "MIT",
-      "keywords": ["lark", "feishu", "testcase", "xmind", "opml"],
-      "category": "productivity"
-    },
-    {
       "name": "testflow-generator",
       "source": "./plugins/testflow-generator",
       "description": "基于 TestFlow 四阶段工作流的智能测试用例生成器。支持需求分析→测试点生成→用例设计→智能优化的渐进式流程，遵循二八法则确保测试覆盖质量。",
