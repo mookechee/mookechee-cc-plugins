@@ -38,10 +38,10 @@ MCP 服务器的配置方式请参考各服务器的官方文档。配置完成�
 
 ```bash
 # 添加插件市场
-/plugin marketplace add mookechee/mookechee-cc-plugins
+/plugin marketplace add mookechee/casepilot
 
 # 安装 CasePilot 插件
-/plugin install casepilot@mookechee-cc-plugins
+/plugin install casepilot@casepilot
 ```
 
 或使用交互式界面：
@@ -57,7 +57,7 @@ MCP 服务器的配置方式请参考各服务器的官方文档。配置完成�
 如果你需要对插件进行修改或调试：
 
 ```bash
-claude --plugin-dir /path/to/mookechee-cc-plugins
+claude --plugin-dir /path/to/casepilot
 ```
 
 ### 3.3 验证安装

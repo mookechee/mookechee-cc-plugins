@@ -1,5 +1,5 @@
 {
-  "name": "mookechee-cc-plugins",
+  "name": "casepilot",
   "owner": {
     "name": "mookechee"
   },
@@ -16,7 +16,7 @@
       "author": {
         "name": "mookechee"
       },
-      "repository": "https://github.com/mookechee/mookechee-cc-plugins",
+      "repository": "https://github.com/mookechee/casepilot",
       "license": "MIT",
       "keywords": ["casepilot", "testcase", "测试用例", "需求分析", "测试点", "xmind", "markdown", "markmap", "lark", "feishu", "飞书项目", "ai", "四阶段"],
       "category": "productivity"
