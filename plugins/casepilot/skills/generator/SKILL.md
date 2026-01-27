@@ -1,11 +1,11 @@
 ---
-name: testflow-generator
-description: 基于 TestFlow 四阶段工作流的智能测试用例生成器。当用户需要为 Story/需求/缺陷生成测试用例、创建 Markdown 格式的 markmap 思维导图测试用例、根据技术方案设计测试场景、或者需要生成测试覆盖矩阵时使用。支持功能测试、边界测试、异常测试、兼容性测试、性能测试、安全测试等多种测试类型。
+name: casepilot
+description: 智能测试用例生成器。当用户需要为 Story/需求/缺陷生成测试用例、创建 Markdown 格式的 markmap 思维导图测试用例、根据技术方案设计测试场景、或者需要生成测试覆盖矩阵时使用。支持功能测试、边界测试、异常测试、兼容性测试、性能测试、安全测试等多种测试类型。
 ---
 
-# TestFlow 智能测试用例生成器
+# CasePilot 智能测试用例生成器
 
-基于 TestFlow 四阶段工作流的智能测试用例生成 Skill，从需求文档自动生成 **混合结构 Markdown** 格式的测试用例（可用 markmap 渲染）。
+智能测试用例生成 Skill，从需求文档自动生成 **混合结构 Markdown** 格式的测试用例（可用 markmap 渲染）。
 
 ## MCP 服务器依赖
 
@@ -55,7 +55,7 @@ description: 基于 TestFlow 四阶段工作流的智能测试用例生成器。
 
 4. 重启 Claude Code 后重试
 
-或者运行 /testflow-generator:check-mcp 查看详细配置指南。
+或者运行 /casepilot:check-mcp 查看详细配置指南。
 ```
 
 ## 功能概述
@@ -65,13 +65,13 @@ description: 基于 TestFlow 四阶段工作流的智能测试用例生成器。
 ```
 需求文档
     ↓
-[阶段1] 需求分析
+[阶段1] 需求分析 (0-25%)
     ↓ → 需求点列表
-[阶段2] 测试点生成
+[阶段2] 测试点生成 (25-50%)
     ↓ → 测试点列表（遵循二八法则）
-[阶段3] 用例设计
+[阶段3] 用例设计 (50-85%)
     ↓ → 测试用例
-[阶段4] 智能优化
+[阶段4] 智能优化 (85-100%)
     ↓
 Markdown 文件（可用 markmap 渲染）
 ```
@@ -228,7 +228,7 @@ WebSearch
 
 ### 第八步：输出 Markdown 文件
 
-生成路径：`~/Testcase/markmap/{工作项名称}_测试用例_markmap_{时间戳}.md`
+生成路径：`~/Testcase/markmap/{工作项名称}_测试用例_{时间戳}.md`
 
 时间戳格式：`YYYYMMDD_HHmmss`（如 `20250106_143052`）
 
@@ -308,4 +308,4 @@ https://project.feishu.cn/uts5wn/story/detail/6596729761
 
 ### 输出
 
-生成 Markdown 文件 `~/Testcase/markmap/{需求名称}_测试用例_markmap_{时间戳}.md`
+生成 Markdown 文件 `~/Testcase/markmap/{需求名称}_测试用例_{时间戳}.md`

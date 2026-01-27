@@ -4,7 +4,7 @@ description: 检查飞书MCP服务器配置状态，并提供配置指引。
 
 # 检查 MCP 配置
 
-检查 testflow-generator 插件所需的 MCP 服务器是否已正确配置。
+检查 casepilot 插件所需的 MCP 服务器是否已正确配置。
 
 ## 依赖的 MCP 服务器
 
