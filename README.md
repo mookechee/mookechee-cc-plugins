@@ -17,13 +17,13 @@ Claude Code 插件市场，提供飞书项目相关的效率工具。
 ### 添加 Marketplace
 
 ```bash
-/plugin marketplace add mookechee/mookechee-cc-plugins
+/plugin marketplace add mookechee/casepilot
 ```
 
 ### 安装插件
 
 ```bash
-/plugin install testflow-generator@mookechee-cc-plugins
+/plugin install casepilot@casepilot
 ```
 
 或使用交互式界面：
@@ -37,7 +37,7 @@ Claude Code 插件市场，提供飞书项目相关的效率工具。
 ### 本地开发模式
 
 ```bash
-claude --plugin-dir /path/to/mookechee-cc-plugins
+claude --plugin-dir /path/to/casepilot
 ```
 
 ## 输出路径
@@ -57,7 +57,7 @@ claude --plugin-dir /path/to/mookechee-cc-plugins
 ## 目录结构
 
 ```
-mookechee-cc-plugins/
+casepilot/
 ├── .claude-plugin/
 │   └── marketplace.json          # Marketplace 配置
 ├── plugins/
