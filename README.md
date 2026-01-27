@@ -1,6 +1,6 @@
 # CasePilot
 
-Claude Code 插件市场，提供飞书项目相关的效率工具。
+Claude Code 插件，从需求文档自动生成 Markmap 思维导图测试用例。
 
 ## 快速开始
 

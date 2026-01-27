@@ -11,7 +11,7 @@
     {
       "name": "casepilot",
       "source": "./plugins/casepilot",
-      "description": "从需求文档自动生成 Markdown 测试用例。支持飞书项目单、云文档和本地文件。",
+      "description": "从需求文档自动生成 Markmap 思维导图测试用例。支持飞书项目单、云文档和本地文件。",
       "version": "0.3.1",
       "author": {
         "name": "mookechee"
