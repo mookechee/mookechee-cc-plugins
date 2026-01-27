@@ -1,4 +1,4 @@
-# Mookechee CC Plugins
+# CasePilot
 
 Claude Code 插件市场，提供飞书项目相关的效率工具。
 
@@ -10,7 +10,7 @@ Claude Code 插件市场，提供飞书项目相关的效率工具。
 
 | 插件 | 描述 |
 |------|------|
-| [testflow-generator](./plugins/testflow-generator/) | 基于四阶段工作流的智能测试用例生成器，支持多输入源 |
+| [casepilot](./plugins/casepilot/) | 基于四阶段工作流的智能测试用例生成器，支持多输入源 |
 
 ## 安装
 
@@ -61,7 +61,7 @@ casepilot/
 ├── .claude-plugin/
 │   └── marketplace.json          # Marketplace 配置
 ├── plugins/
-│   └── testflow-generator/       # 四阶段智能测试用例生成器
+│   └── casepilot/                # 四阶段智能测试用例生成器
 │       ├── .claude-plugin/
 │       │   └── plugin.json
 │       ├── commands/
