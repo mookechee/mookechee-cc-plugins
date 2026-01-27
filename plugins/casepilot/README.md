@@ -1,6 +1,6 @@
-# TestFlow Generator
+# CasePilot
 
-基于 TestFlow 四阶段工作流的智能测试用例生成器。从需求文档自动生成 **混合结构 Markdown** 格式的测试用例（可用 markmap 渲染）。
+智能测试用例生成器。从需求文档自动生成 **混合结构 Markdown** 格式的测试用例（可用 markmap 渲染）。
 
 ## 功能特性
 
@@ -31,16 +31,16 @@
 
 ```bash
 # 从飞书项目单生成
-/testflow-generator:generate https://project.feishu.cn/xxx/story/detail/xxx
+/casepilot:generate https://project.feishu.cn/xxx/story/detail/xxx
 
 # 从飞书云文档生成
-/testflow-generator:generate https://xxx.feishu.cn/docx/xxx
+/casepilot:generate https://xxx.feishu.cn/docx/xxx
 
 # 从本地文件生成
-/testflow-generator:generate ./docs/requirement.md
+/casepilot:generate ./docs/requirement.md
 
 # 检查 MCP 配置
-/testflow-generator:check-mcp
+/casepilot:check-mcp
 ```
 
 ### 自然语言方式
@@ -55,11 +55,11 @@
 
 ## 四阶段工作流
 
-### 阶段1：需求分析
+### 阶段1：需求分析（0-25%）
 
 将需求文档拆分为独立、可测试的需求点。
 
-### 阶段2：测试点生成
+### 阶段2：测试点生成（25-50%）
 
 基于二八法则，为每个需求点生成 3-8 个测试点。
 
@@ -71,11 +71,11 @@
 - 异常场景测试（P0-P1）
 - 兼容性测试（P1-P2）
 
-### 阶段3：用例设计
+### 阶段3：用例设计（50-85%）
 
 为每个测试点设计测试用例，采用链式结构。
 
-### 阶段4：智能优化
+### 阶段4：智能优化（85-100%）
 
 验收标准覆盖检查，确保每条验收标准都有对应的测试用例。
 
@@ -110,7 +110,7 @@
 ### 输出路径
 
 ```
-~/Testcase/markmap/{工作项名称}_测试用例_markmap_{时间戳}.md
+~/Testcase/markmap/{工作项名称}_测试用例_{时间戳}.md
 ```
 
 ### 输出总结
@@ -129,22 +129,11 @@
 | **P1** | 中等 | 边界条件、配置验证、异常处理、主题/语言切换 |
 | **P2** | 较低 | 辅助功能、稳定性测试、极端场景 |
 
-## 与 lark-testcase-generator 的区别
-
-| 特性 | lark-testcase-generator | testflow-generator |
-|------|-------------------------|-------------------|
-| 输入源 | 仅飞书项目单 | 飞书项目单 + 云文档 + 本地文件 |
-| 生成流程 | 单阶段 | 四阶段渐进式 |
-| 需求分析 | 无 | 有（需求点拆分） |
-| 测试点生成 | 无 | 有（二八法则） |
-| 验收标准覆盖 | 有 | 有（强化） |
-| 用例结构 | 链式 | 链式（一致） |
-
 ## 常见问题
 
 ### Q: MCP 服务未配置怎么办？
 
-运行 `/testflow-generator:check-mcp` 查看配置状态和指引。
+运行 `/casepilot:check-mcp` 查看配置状态和指引。
 
 ### Q: 可以只使用本地文件吗？
 
@@ -156,7 +145,7 @@
 
 ## 技术来源
 
-本插件的四阶段工作流和提示词设计参考自 [TestFlow](https://github.com/testflow/testflow) 项目。
+本插件的四阶段工作流设计参考自 TestFlow 方法论。
 
 ## 许可证
 
