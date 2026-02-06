@@ -52,6 +52,7 @@ URL 格式：`https://project.feishu.cn/{project_key}/story/detail/{work_item_id
 1. 先调用 `mcp__lark-prj-new__get_workitem_info`（或回退 `mcp__lark-prj-remote__get_workitem_info`）获取字段元数据，参数 `work_item_type: "story"`
 2. 在返回的字段列表中按名称匹配：`"验收标准"` → 对应 field_key，`"技术设计文档"` → 对应 field_key
 3. 匹配失败时回退默认值：验收标准=`field_803289`，技术设计文档=`field_13a9cf`
+   **注意**：这些默认值仅适用于特定飞书项目，使用回退值时应向用户发出警告，提示可能需要根据实际项目配置 field_key
 
 调用获取工作项详情：
 
@@ -293,7 +294,7 @@ query:
 
 #### 5.1 检测 superpowers 插件
 
-检查 superpowers 插件是否可用（通过检查 `superpowers:requesting-code-review` 是否在可用 skills 列表中）。
+检查 superpowers 插件是否可用（通过检查 `superpowers:code-reviewer` 是否在可用 skills 列表中）。
 
 **已安装**: 继续执行 5.2
 
@@ -303,8 +304,9 @@ query:
 Review 审查需要 superpowers 插件支持，当前未检测到。
 
 安装方法：
-1. 在 Claude Code 中运行: /install-plugin claude-plugins-official/superpowers
-2. 安装完成后重新运行 generate 命令
+1. 添加官方市场: /plugin marketplace add anthropics/claude-plugins-official
+2. 安装插件: /plugin install superpowers@anthropics/claude-plugins-official
+3. 安装完成后重新运行 generate 命令
 
 或跳过 Review 步骤，直接继续。
 ```

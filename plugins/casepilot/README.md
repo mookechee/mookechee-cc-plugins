@@ -154,7 +154,8 @@
 
 Review 审查依赖 `superpowers` 插件（Claude Code 官方插件）。安装方法：
 ```
-/install-plugin claude-plugins-official/superpowers
+/plugin marketplace add anthropics/claude-plugins-official
+/plugin install superpowers@anthropics/claude-plugins-official
 ```
 如果未安装，工作流会提示跳过或安装。
 
